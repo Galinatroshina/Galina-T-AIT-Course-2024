@@ -6,6 +6,7 @@ package classwork_18.computer_shop;
 
 import classwork_18.computer_shop.model.Computer;
 import classwork_18.computer_shop.model.Laptop;
+import classwork_18.computer_shop.model.Smartphone;
 
 public class ShopAll {
     public static void main(String[] args) {
@@ -16,12 +17,13 @@ public class ShopAll {
         Laptop laptop = new Laptop("M1", 8, 256, "Apple AirBook", 2200, 14, 1.5, 32, "black" );
 
         //кладем объекты в массив, чтобы выполнить второй задание
-        Computer[] computers = new Computer[5]; // типа 3 компа и 2 ноута
+        Computer[] computers = new Computer[6]; // типа 3 компа и 2 ноута
         computers[0] = new Computer("i7", 8, 256, "Acer", 1200);
         computers[1] = new Computer("i5", 16, 256, "Mac", 1500);
         computers[2] = new Computer("Intel", 8, 256, "HP", 2000);
         computers[3] = new Laptop("M1", 8, 256, "Apple", 1200, 14, 1.5, 32, "white");
         computers[4] = new Laptop("M2", 8, 256, "Apple", 2000,16, 1.8, 32, "silver");
+        computers[5] = new Smartphone("M1", 8, 1000, "Apple", 1200, 5, 200, 32, "white", 85948943984L);
 
         int totalSsd = 0;
         for (int i = 0; i < computers.length; i++) {
