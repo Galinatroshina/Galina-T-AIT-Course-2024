@@ -1,0 +1,39 @@
+- компания (Company)
+
+private long id;
+private String name;
+private String type;
+private int numberOfEmployee;
+private double turnover;
+
+- дерево (Tree)
+
+private int id;
+private String name; (type)
+private int age;
+private String area; (climazone)
+private double height;
+
+- здание (Building)
+
+private int number;
+private boolean type;
+private int floors;
+private int age;
+private double price;
+
+- письмо (Letter)
+
+private String recipient;
+private double weight;
+private String type;
+private boolean ifConfirmed;
+private double cost;
+
+- пользователь (User)
+
+private String name;
+private String password;
+private String email;
+private LocalDate birthDay;
+private boolean gender;
