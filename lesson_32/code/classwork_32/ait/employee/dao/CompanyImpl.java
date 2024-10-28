@@ -1,8 +1,7 @@
-package homework_28.ait.employee.dao;
+package classwork_32.ait.employee.dao;
 
-import homework_28.ait.employee.model.Employee;
-import homework_28.ait.employee.model.SalesManager;
-import homework_28.ait.employee.model.Worker;
+import classwork_32.ait.employee.model.Employee;
+import classwork_32.ait.employee.model.SalesManager;
 
 import java.util.function.Predicate;
 
@@ -19,21 +18,32 @@ public class CompanyImpl implements Company {
 
     @Override
     public boolean addEmployee(Employee employee) {
-
-        //bad case
+        // bad cases
         if(employee == null){
             return false;
         }
-
-        //good case
-        employees[size] = employee;
+        if(size == employees.length){
+            return false;
+        }
+        if(findEmployee(employee.getId()) != null) {
+            return false;
+        }
+        // good case
+        employees[size] = employee; // put in array
         size++;
         return true;
-
     }
 
     @Override
     public Employee removeEmployee(int id) {
+        for (int i = 0; i < size; i++) {
+            if(employees[i].getId() == id){
+                Employee victim = employees[i];
+                System.arraycopy(employees, i + 1, employees, i , size - i - 1 );
+                employees[--size] = null;
+                return victim;
+            }
+        }
         return null;
     }
 
@@ -50,8 +60,18 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee updateEmployee(Employee employee) {
+        //отыскать нужного в массиве и обновить ему поля, забирая их из employee
+        for (int i = 0; i < size; i++) {
+            if(employees[i].getId() == employee.getId()){
+                //employees[i].setSecondName(employee.getSecondName());
+                //employees[i].getHours(employee.getHours());
+                employees[i] = employee;
+                return employees[i];
+            }
+        }
         return null;
     }
+
 
     @Override
     public int quantity() {
@@ -125,4 +145,6 @@ public class CompanyImpl implements Company {
             return salary >= min && salary <= max;
         });
     }
+
+
 }

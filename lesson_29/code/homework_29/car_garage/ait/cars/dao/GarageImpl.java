@@ -1,13 +1,14 @@
-package classwork_28.car_garage.ait.cars.dao;
+package homework_29.car_garage.ait.cars.dao;
 
-import classwork_28.car_garage.ait.cars.model.Car;
+import homework_29.car_garage.ait.cars.model.Car;
 
 import java.util.function.Predicate;
 
-public class GarageImpl implements Garage {
+public class GarageImpl implements Garage{
 
     private Car[] cars;
     private int size;
+
 
     public GarageImpl(int capacity) {
         this.cars = new Car[capacity];
@@ -73,6 +74,8 @@ public class GarageImpl implements Garage {
         }
 
     }
+
+
 
     //в этот метод передаем логическое выражениеб которое будет тестировать объекты типа Car
     private Car[] findCarsByPredicate(Predicate<Car> predicate){

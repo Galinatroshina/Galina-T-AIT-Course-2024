@@ -1,4 +1,4 @@
-package homework_28.ait.employee.model;
+package classwork_32.ait.employee.model;
 
 import java.util.Objects;
 

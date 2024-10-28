@@ -1,11 +1,11 @@
-package homework_28.ait.employee.test;
+package classwork_32.ait.employee.test;
 
-import homework_28.ait.employee.dao.Company;
-import homework_28.ait.employee.dao.CompanyImpl;
-import homework_28.ait.employee.model.Employee;
-import homework_28.ait.employee.model.Manager;
-import homework_28.ait.employee.model.SalesManager;
-import homework_28.ait.employee.model.Worker;
+import classwork_32.ait.employee.dao.Company;
+import classwork_32.ait.employee.dao.CompanyImpl;
+import classwork_32.ait.employee.model.Employee;
+import classwork_32.ait.employee.model.Manager;
+import classwork_32.ait.employee.model.SalesManager;
+import classwork_32.ait.employee.model.Worker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -59,8 +59,12 @@ class CompanyImplTest {
 
     @Test
     void removeEmployeeTest() {
-
-
+        // can remove existed
+        assertEquals( emp[1], company.removeEmployee(2));
+        // check size
+        assertEquals( 3, company.quantity() );
+        // can't remove absent
+        assertNull(company.removeEmployee(7));
     }
 
     @Test
@@ -73,6 +77,9 @@ class CompanyImplTest {
 
     @Test
     void updateEmployeeTest() {
+        Employee updatedEmployee = new SalesManager(2, "N2", "New Second Name", 160, 50000, 0.1);
+        //assertNull("New Second Name", updatedEmployee(updatedEmployee).getSecondName());
+        //assertEquals(55000, company.updateEmployee((SalesManager)updatedEmployee));
 
     }
 
