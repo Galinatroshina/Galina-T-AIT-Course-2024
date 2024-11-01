@@ -5,11 +5,11 @@ import java.util.Random;
 public class BubbleSortCount {
 
     public static int bubbleSort(int[] array) {
-        int operationCount = 0;
+        int count = 0;
 
         for (int i = 0; i < array.length - 1; i++) {
             for (int b = 0; b < array.length - 1 - i; b++) {
-                operationCount++;
+                count++;
                 if (array[b] > array[b + 1]) {
                     int elements = array[b];
                     array[b] = array[b + 1];
@@ -17,7 +17,7 @@ public class BubbleSortCount {
                 }
             }
         }
-        return operationCount;
+        return count;
     }
 
     public static int[] generateRandomArray(int size) {
@@ -33,9 +33,7 @@ public class BubbleSortCount {
         int[] sizes = {10, 100, 1000};
         for (int size : sizes) {
             int[] array = generateRandomArray(size);
-            int operationCount = bubbleSort(array);
+            int count = bubbleSort(array);
         }
     }
-
-
 }

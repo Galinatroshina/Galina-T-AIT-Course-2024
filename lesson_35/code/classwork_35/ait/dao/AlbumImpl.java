@@ -83,9 +83,10 @@ public class AlbumImpl implements Album{
     }
 
     @Override
-    public Photo[] getAllPhotoFrom(int albumId) {
+    public Photo[] getAllPhotoFromAlbum(int albumId) {
         return new Photo[0];
     }
+
 
     @Override
     public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
